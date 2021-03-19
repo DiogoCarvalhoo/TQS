@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: sets.SetOfNaturalsTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.329 s <<< FAILURE! - in sets.SetOfNaturalsTest
+testAddBadArray  Time elapsed: 0.048 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <0> but was: <2>
+	at sets.SetOfNaturalsTest.testAddBadArray(SetOfNaturalsTest.java:67)
+
