@@ -31,67 +31,77 @@ public class Dip {
 <span class="fc" id="L31">        this();</span>
 
 <span class="fc bfc" id="L33" title="All 4 branches covered.">        if (MAXSIZENUMBERS == arrayOfNumbers.length &amp;&amp; MAXSIZESTARS == arrayOfStarts.length) {</span>
-<span class="fc" id="L34">            numbers.add(arrayOfNumbers);</span>
-<span class="fc" id="L35">            starts.add(arrayOfStarts);</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            for (int n: arrayOfNumbers) {</span>
+<span class="pc bpc" id="L35" title="2 of 4 branches missed.">                if (!(0 &lt; n &amp;&amp; n &lt;= 50)) {</span>
+<span class="nc" id="L36">                    throw new IllegalArgumentException(&quot;wrong range of number in numbers array&quot;);</span>
+                }
+            }
+<span class="fc bfc" id="L39" title="All 2 branches covered.">            for (int n: arrayOfStarts) {</span>
+<span class="fc bfc" id="L40" title="All 4 branches covered.">                if (!(0 &lt; n &amp;&amp; n &lt;= 10)) {</span>
+<span class="fc" id="L41">                    throw new IllegalArgumentException(&quot;wrong range of number in stars array&quot;);</span>
+                }
+            }
+<span class="fc" id="L44">            numbers.add(arrayOfNumbers);</span>
+<span class="fc" id="L45">            starts.add(arrayOfStarts);</span>
         } else {
-<span class="fc" id="L37">            throw new IllegalArgumentException(&quot;wrong number of elements in numbers/stars&quot;);</span>
+<span class="fc" id="L47">            throw new IllegalArgumentException(&quot;wrong number of elements in numbers/stars&quot;);</span>
         }
 
-<span class="fc" id="L40">    }</span>
+<span class="fc" id="L50">    }</span>
 
     public SetOfNaturals getNumbersColl() {
-<span class="fc" id="L43">        return numbers;</span>
+<span class="fc" id="L53">        return numbers;</span>
     }
 
     public SetOfNaturals getStarsColl() {
-<span class="fc" id="L47">        return starts;</span>
+<span class="fc" id="L57">        return starts;</span>
     }
 
     public static Dip generateRandomDip() {
-<span class="fc" id="L51">        Random generator = new Random();</span>
+<span class="fc" id="L61">        Random generator = new Random();</span>
 
-<span class="fc" id="L53">        Dip randomDip = new Dip();</span>
-<span class="fc bfc" id="L54" title="All 2 branches covered.">        for (int i = 0; i &lt; MAXSIZENUMBERS; ) {</span>
-<span class="fc" id="L55">            int candidate = generator.nextInt(MAXRANGENUMBERS-1) + 1;</span>
-<span class="pc bpc" id="L56" title="1 of 2 branches missed.">            if (!randomDip.getNumbersColl().contains(candidate)) {</span>
-<span class="fc" id="L57">                randomDip.getNumbersColl().add(candidate);</span>
-<span class="fc" id="L58">                i++;</span>
+<span class="fc" id="L63">        Dip randomDip = new Dip();</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        for (int i = 0; i &lt; MAXSIZENUMBERS; ) {</span>
+<span class="fc" id="L65">            int candidate = generator.nextInt(MAXRANGENUMBERS-1) + 1;</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">            if (!randomDip.getNumbersColl().contains(candidate)) {</span>
+<span class="fc" id="L67">                randomDip.getNumbersColl().add(candidate);</span>
+<span class="fc" id="L68">                i++;</span>
             }
-<span class="fc" id="L60">        }</span>
-<span class="fc bfc" id="L61" title="All 2 branches covered.">        for (int i = 0; i &lt; MAXSIZESTARS; ) {</span>
-<span class="fc" id="L62">            int candidate = generator.nextInt(MAXRANGESTARS-1) + 1;</span>
-<span class="fc bfc" id="L63" title="All 2 branches covered.">            if (!randomDip.getStarsColl().contains(candidate)) {</span>
-<span class="fc" id="L64">                randomDip.getStarsColl().add(candidate);</span>
-<span class="fc" id="L65">                i++;</span>
+<span class="fc" id="L70">        }</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        for (int i = 0; i &lt; MAXSIZESTARS; ) {</span>
+<span class="fc" id="L72">            int candidate = generator.nextInt(MAXRANGESTARS-1) + 1;</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">            if (!randomDip.getStarsColl().contains(candidate)) {</span>
+<span class="fc" id="L74">                randomDip.getStarsColl().add(candidate);</span>
+<span class="fc" id="L75">                i++;</span>
             }
-<span class="fc" id="L67">        }</span>
-<span class="fc" id="L68">        return randomDip;</span>
+<span class="fc" id="L77">        }</span>
+<span class="fc" id="L78">        return randomDip;</span>
     }
 
     @Override
     public int hashCode() {
-<span class="nc" id="L73">        int hash = 3;</span>
-<span class="nc" id="L74">        hash = 29 * hash + Objects.hashCode(this.numbers);</span>
-<span class="nc" id="L75">        hash = 29 * hash + Objects.hashCode(this.starts);</span>
-<span class="nc" id="L76">        return hash;</span>
+<span class="nc" id="L83">        int hash = 3;</span>
+<span class="nc" id="L84">        hash = 29 * hash + Objects.hashCode(this.numbers);</span>
+<span class="nc" id="L85">        hash = 29 * hash + Objects.hashCode(this.starts);</span>
+<span class="nc" id="L86">        return hash;</span>
     }
 
     @Override
     public boolean equals(Object obj) {
-<span class="pc bpc" id="L81" title="1 of 2 branches missed.">        if (this == obj) {</span>
-<span class="nc" id="L82">            return true;</span>
+<span class="pc bpc" id="L91" title="1 of 2 branches missed.">        if (this == obj) {</span>
+<span class="nc" id="L92">            return true;</span>
         }
-<span class="pc bpc" id="L84" title="1 of 2 branches missed.">        if (obj == null) {</span>
-<span class="nc" id="L85">            return false;</span>
+<span class="pc bpc" id="L94" title="1 of 2 branches missed.">        if (obj == null) {</span>
+<span class="nc" id="L95">            return false;</span>
         }
-<span class="pc bpc" id="L87" title="1 of 2 branches missed.">        if (getClass() != obj.getClass()) {</span>
-<span class="nc" id="L88">            return false;</span>
+<span class="pc bpc" id="L97" title="1 of 2 branches missed.">        if (getClass() != obj.getClass()) {</span>
+<span class="nc" id="L98">            return false;</span>
         }
-<span class="fc" id="L90">        final Dip other = (Dip) obj;</span>
-<span class="pc bpc" id="L91" title="1 of 2 branches missed.">        if (!Objects.equals(this.numbers, other.numbers)) {</span>
-<span class="nc" id="L92">            return false;</span>
+<span class="fc" id="L100">        final Dip other = (Dip) obj;</span>
+<span class="pc bpc" id="L101" title="1 of 2 branches missed.">        if (!Objects.equals(this.numbers, other.numbers)) {</span>
+<span class="nc" id="L102">            return false;</span>
         }
-<span class="fc" id="L94">        return Objects.equals(this.starts, other.starts);</span>
+<span class="fc" id="L104">        return Objects.equals(this.starts, other.starts);</span>
     }
 
 
@@ -102,17 +112,17 @@ public class Dip {
      * @return formatted string with data
      */
     public String format() {
-<span class="fc" id="L105">        StringBuilder sb = new StringBuilder();</span>
-<span class="fc" id="L106">        sb.append(&quot;N[&quot;);</span>
-<span class="fc bfc" id="L107" title="All 2 branches covered.">        for (int number : getNumbersColl()) {</span>
-<span class="fc" id="L108">            sb.append(String.format(&quot;%3d&quot;, number));</span>
-<span class="fc" id="L109">        }</span>
-<span class="fc" id="L110">        sb.append(&quot;] S[&quot;);</span>
-<span class="fc bfc" id="L111" title="All 2 branches covered.">        for (int star : getStarsColl()) {</span>
-<span class="fc" id="L112">            sb.append(String.format(&quot;%3d&quot;, star));</span>
-<span class="fc" id="L113">        }</span>
-<span class="fc" id="L114">        sb.append(&quot;]&quot;);</span>
-<span class="fc" id="L115">        return sb.toString();</span>
+<span class="fc" id="L115">        StringBuilder sb = new StringBuilder();</span>
+<span class="fc" id="L116">        sb.append(&quot;N[&quot;);</span>
+<span class="fc bfc" id="L117" title="All 2 branches covered.">        for (int number : getNumbersColl()) {</span>
+<span class="fc" id="L118">            sb.append(String.format(&quot;%3d&quot;, number));</span>
+<span class="fc" id="L119">        }</span>
+<span class="fc" id="L120">        sb.append(&quot;] S[&quot;);</span>
+<span class="fc bfc" id="L121" title="All 2 branches covered.">        for (int star : getStarsColl()) {</span>
+<span class="fc" id="L122">            sb.append(String.format(&quot;%3d&quot;, star));</span>
+<span class="fc" id="L123">        }</span>
+<span class="fc" id="L124">        sb.append(&quot;]&quot;);</span>
+<span class="fc" id="L125">        return sb.toString();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

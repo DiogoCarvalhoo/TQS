@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="sets.SetOfNaturalsTest" time="0.329" tests="9" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="sets.SetOfNaturalsTest" time="0.119" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value=""/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/TQS_Euromillion_unit/target/test-classes:/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/TQS_Euromillion_unit/target/classes:/home/diogo/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/diogo/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/diogo/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:/home/diogo/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/diogo/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/diogo/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:"/>
+    <property name="java.class.path" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/test-classes:/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/classes:/home/diogo/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/diogo/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/diogo/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:/home/diogo/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/diogo/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/diogo/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:"/>
     <property name="java.vm.vendor" value="Ubuntu"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://ubuntu.com/"/>
@@ -16,9 +16,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="PT"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/TQS_Euromillion_unit/target/surefire/surefirebooter6625107926709301469.jar /home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/TQS_Euromillion_unit/target/surefire 2021-03-18T20-29-48_905-jvmRun1 surefire16652560564667225814tmp surefire_02508823101547644215tmp"/>
+    <property name="sun.java.command" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/surefire/surefirebooter14415345780226415231.jar /home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/surefire 2021-03-19T15-23-51_637-jvmRun1 surefire17047499168540727558tmp surefire_016621129246763592889tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/TQS_Euromillion_unit/target/test-classes:/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/TQS_Euromillion_unit/target/classes:/home/diogo/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/diogo/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/diogo/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:/home/diogo/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/diogo/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/diogo/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:"/>
+    <property name="surefire.test.class.path" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/test-classes:/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/classes:/home/diogo/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/diogo/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/diogo/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:/home/diogo/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/diogo/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/diogo/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/diogo"/>
     <property name="user.language" value="pt"/>
@@ -26,13 +26,13 @@
     <property name="java.version.date" value="2021-01-19"/>
     <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
     <property name="file.separator" value="/"/>
-    <property name="basedir" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/TQS_Euromillion_unit"/>
+    <property name="basedir" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/TQS_Euromillion_unit/target/surefire/surefirebooter6625107926709301469.jar"/>
+    <property name="surefire.real.class.path" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/surefire/surefirebooter14415345780226415231.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.10+9-Ubuntu-0ubuntu1.20.04"/>
     <property name="user.name" value="diogo"/>
@@ -45,7 +45,7 @@
     <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-lts"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="java.version" value="11.0.10"/>
-    <property name="user.dir" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/TQS_Euromillion_unit"/>
+    <property name="user.dir" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
@@ -57,17 +57,13 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="testAddInvalidElement" classname="sets.SetOfNaturalsTest" time="0.102"/>
-  <testcase name="testAddDuplicatedElement" classname="sets.SetOfNaturalsTest" time="0.035"/>
-  <testcase name="testIntersectWithTrueIntersection" classname="sets.SetOfNaturalsTest" time="0.011"/>
-  <testcase name="testAddElement" classname="sets.SetOfNaturalsTest" time="0.027"/>
-  <testcase name="testFromArrayWithBadValues" classname="sets.SetOfNaturalsTest" time="0.003"/>
-  <testcase name="testAddBadArray" classname="sets.SetOfNaturalsTest" time="0.048">
-    <failure message="expected: &lt;0&gt; but was: &lt;2&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <0> but was: <2>
-	at sets.SetOfNaturalsTest.testAddBadArray(SetOfNaturalsTest.java:67)
-]]></failure>
-  </testcase>
-  <testcase name="testContainsValidation" classname="sets.SetOfNaturalsTest" time="0.002"/>
+  <testcase name="testAddInvalidElement" classname="sets.SetOfNaturalsTest" time="0.051"/>
+  <testcase name="testAddDuplicatedElement" classname="sets.SetOfNaturalsTest" time="0.002"/>
+  <testcase name="testIntersectWithTrueIntersection" classname="sets.SetOfNaturalsTest" time="0.003"/>
+  <testcase name="testAddElement" classname="sets.SetOfNaturalsTest" time="0.006"/>
+  <testcase name="testFromArrayWithBadValues" classname="sets.SetOfNaturalsTest" time="0.011"/>
+  <testcase name="testAddBadArray" classname="sets.SetOfNaturalsTest" time="0.002"/>
+  <testcase name="testContainsValidation" classname="sets.SetOfNaturalsTest" time="0.003"/>
   <testcase name="testIntersectForNoIntersection" classname="sets.SetOfNaturalsTest" time="0.002"/>
   <testcase name="testSizeBehaviour" classname="sets.SetOfNaturalsTest" time="0.001"/>
 </testsuite>
