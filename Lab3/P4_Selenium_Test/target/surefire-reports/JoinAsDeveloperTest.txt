@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: JoinAsDeveloperTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 9.085 s <<< FAILURE! - in JoinAsDeveloperTest
+untitled  Time elapsed: 9.08 s  <<< ERROR!
+org.openqa.selenium.ElementClickInterceptedException: 
+Element <input id="talent_create_applicant_full_name" class="string required input input-is-text" name="talent_create_applicant[full_name]" type="text"> is not clickable at point (353,584) because another element <div class="cookie_banner is-gdpr"> obscures it
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'rafael', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-70-generic', java.version: '1.8.0_282'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 87.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210318103112, moz:geckodriverVersion: 0.29.0, moz:headless: false, moz:processID: 59319, moz:profile: /tmp/rust_mozprofile5L1gid, moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, platformVersion: 5.4.0-70-generic, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 8d9e7706-66b6-4cb9-8255-4f04d6e82749
+	at JoinAsDeveloperTest.untitled(JoinAsDeveloperTest.java:48)
+

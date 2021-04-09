@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: Lab3TestTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! - in Lab3TestTest
+initializationError  Time elapsed: 0.001 s  <<< ERROR!
+org.junit.runners.model.InvalidTestClassError: 
+Invalid test class 'Lab3TestTest':
+  1. Test class should have exactly one public constructor
+
