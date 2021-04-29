@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="sets.SetOfNaturalsTest" time="0.119" tests="9" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="sets.SetOfNaturalsTest" time="0.063" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value=""/>
+    <property name="sonar.login" value="c97fd1ab5bb0777c9014ff937fcb4aee5a94445f"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.class.path" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/test-classes:/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/classes:/home/diogo/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/diogo/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/diogo/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:/home/diogo/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/diogo/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/diogo/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:"/>
     <property name="java.vm.vendor" value="Ubuntu"/>
@@ -16,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="PT"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/surefire/surefirebooter14415345780226415231.jar /home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/surefire 2021-03-19T15-23-51_637-jvmRun1 surefire17047499168540727558tmp surefire_016621129246763592889tmp"/>
+    <property name="sun.java.command" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/surefire/surefirebooter5013253052047641838.jar /home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/surefire 2021-04-27T14-24-39_160-jvmRun1 surefire5987024654114994363tmp surefire_014958610518332246117tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/test-classes:/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/classes:/home/diogo/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/diogo/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/diogo/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:/home/diogo/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/diogo/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/diogo/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -32,12 +33,12 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/surefire/surefirebooter14415345780226415231.jar"/>
+    <property name="surefire.real.class.path" value="/home/diogo/Desktop/3º Ano/TQS/TQS_Labs/Lab1/P2_Euromillion_unit/target/surefire/surefirebooter5013253052047641838.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.10+9-Ubuntu-0ubuntu1.20.04"/>
     <property name="user.name" value="diogo"/>
     <property name="path.separator" value=":"/>
-    <property name="os.version" value="5.8.0-45-generic"/>
+    <property name="os.version" value="5.8.0-50-generic"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
@@ -57,13 +58,13 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="testAddInvalidElement" classname="sets.SetOfNaturalsTest" time="0.051"/>
-  <testcase name="testAddDuplicatedElement" classname="sets.SetOfNaturalsTest" time="0.002"/>
+  <testcase name="testAddInvalidElement" classname="sets.SetOfNaturalsTest" time="0.032"/>
+  <testcase name="testAddDuplicatedElement" classname="sets.SetOfNaturalsTest" time="0.001"/>
   <testcase name="testIntersectWithTrueIntersection" classname="sets.SetOfNaturalsTest" time="0.003"/>
-  <testcase name="testAddElement" classname="sets.SetOfNaturalsTest" time="0.006"/>
-  <testcase name="testFromArrayWithBadValues" classname="sets.SetOfNaturalsTest" time="0.011"/>
-  <testcase name="testAddBadArray" classname="sets.SetOfNaturalsTest" time="0.002"/>
-  <testcase name="testContainsValidation" classname="sets.SetOfNaturalsTest" time="0.003"/>
-  <testcase name="testIntersectForNoIntersection" classname="sets.SetOfNaturalsTest" time="0.002"/>
+  <testcase name="testAddElement" classname="sets.SetOfNaturalsTest" time="0.002"/>
+  <testcase name="testFromArrayWithBadValues" classname="sets.SetOfNaturalsTest" time="0.001"/>
+  <testcase name="testAddBadArray" classname="sets.SetOfNaturalsTest" time="0.001"/>
+  <testcase name="testContainsValidation" classname="sets.SetOfNaturalsTest" time="0.002"/>
+  <testcase name="testIntersectForNoIntersection" classname="sets.SetOfNaturalsTest" time="0.001"/>
   <testcase name="testSizeBehaviour" classname="sets.SetOfNaturalsTest" time="0.001"/>
 </testsuite>
