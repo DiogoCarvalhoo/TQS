@@ -64,7 +64,7 @@ This bug appears because we used a java library SimpleDateFormat with static. No
 ## Vulnerabilities
 We also have a critical vulnerability
 
-![Screenshot](Cov_Bug.png)
+![Screenshot](Cov_Vuln.png)
 
 This appears because we are using passwordEncoder in plain-text. Password should be stored in a hash using a secure algorithm preventing brute force attacks, collision attacks as well as adding a salt to lower the risk of rainbow table attacks.
 
@@ -98,3 +98,20 @@ On new code:
 
 
 Quality Gates are just metric and all the code must be reviewd. They are a huge help but not the final decision on wether a app is excellent or not.
+
+## b) Changin the project
+
+After we have defined quality gates, we will do a small experience now where we change our project and put code smells on code to force the app to not pass. We have defined that in updating code, introducing more than 20 major issues will fail the app quality. So we added some system.out.println to force this error.
+
+Below we can see what happened when we updated code:
+
+![Screenshot](updated.png)
+
+We can see that were added 30 major issues that is greater than 20 as well as uncovered lines and coverage not being enough, although the last 2 being normal because there are not tests implemented.
+
+Below we can see some of the major issues that we have introduced to the code to force this
+
+![Screenshot](major_issues.png)
+
+
+Quality gates we defined worked as expected and we can conclude that define quality gates with values that make sense help developers in practicing good code, as well as finding vulnerabilities and bugs in the app.
