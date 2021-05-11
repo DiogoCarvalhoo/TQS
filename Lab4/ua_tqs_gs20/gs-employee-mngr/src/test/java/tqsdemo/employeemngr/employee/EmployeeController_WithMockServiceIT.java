@@ -66,4 +66,9 @@ public class EmployeeController_WithMockServiceIT {
 
     }
 
+
+    @Test
+    public void testToFailForLab8Ex2() throws Exception {
+        fail("Test to fail");
+    }
 }
