@@ -1,0 +1,49 @@
+
+<button class="btn btn-secondary" type="button" (click)="returnHome()" style="margin: 20px 20px 0 20px; display: inline-block;">
+    <i class="fa fa-home"></i>
+    <label> &nbsp; Return Home</label>
+</button>
+
+<hr>
+
+<div *ngIf="!statistics">
+  <div *ngIf="erro" class="alert alert-danger" role="alert" style="width: 40%; margin: auto;">
+    An error has occurred! Please verify your input values.
+  </div>
+
+  <div class="zoom conteudo" style="height: 440px">
+    <div *ngIf=readyToDisplay class="text-item" style="width: 90%; position: relative; left: 100px">
+      
+      <h2 style="padding-top: 20px; margin-bottom: 40px"> {{ city }}</h2>
+      <p> Latitude: {{ lat }}</p>
+      <p> Longitude: {{ lon }}</p>
+  
+      <div style="text-align: left; line-height: 2; font-size: 20px">
+        <p> dew: {{ dew }}</p>
+        <p> h: {{ h }}</p>
+        <p> no2: {{ no2 }}</p>
+        <p> o3: {{ o3 }}</p>
+        <p> p: {{ p }}</p>
+        <p> pm10: {{ pm10 }}</p>
+        <p> pm25: {{ pm25 }}</p>
+        <p> so2: {{ so2 }}</p>
+        <p> t: {{ t }}</p>
+        <p> w: {{ w }}</p>
+        <p> wg: {{ wg }}</p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div *ngIf="statistics">
+  <div class="zoom conteudo" style="height: 440px">
+    <div *ngIf=readyToDisplay class="text-item" style="width: 90%; position: relative; left: 100px">
+      
+      <h2 style="padding-top: 20px; margin-bottom: 40px"> Cache Statistics</h2>
+      <p> Number of Misses: {{ misses }}</p>
+      <p> Number of Hits: {{ hits }}</p>
+      <p> Number of Requests: {{ requests }}</p>
+    </div>
+  </div>
+</div>

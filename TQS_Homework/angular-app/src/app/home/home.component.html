@@ -1,0 +1,59 @@
+<h1 style="text-align: center; font-weight: bold; font-size: 32px; margin-top: 100px; margin-bottom: 50px;">TQS Air Quality Minimalist Web App</h1>
+
+<div class="container">
+  <h3  style="font-weight: 700; font-size: 22px; margin-top: 20px; margin-bottom: 10px;">Search by City</h3>
+  <div *ngIf="erro1" class="alert alert-danger" role="alert">
+    You should enter a valid city.
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="input-group">
+          <input id="inputCity" type="text" class="form-control" placeholder="City">
+          <div class="input-group-append">
+            <button class="btn btn-secondary" type="button" (click)="searchByCity()">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <hr style="border: solid 2px;">
+  <h3 style="font-weight: 700; font-size: 22px; margin-top: 20px; margin-bottom: 10px;">Search by Latitude and Longitude</h3>
+  <div *ngIf="erro2" class="alert alert-danger" role="alert">
+    Latitude and Longitude fields must be numbers.
+  </div>
+  <div class="row" >
+    <div class="col-md-4 col-lg-4">
+      <div class="input-group">
+          <input id="inputLat" type="number" class="form-control" placeholder="Latitude">
+      </div>
+    </div>
+    <div class="col-md-4 col-lg-4">
+      <div class="input-group">
+          <input id="inputLon" type="number" class="form-control" placeholder="Longitude">
+      </div>
+    </div>
+    <div class="col-md-1 col-lg-1">
+      <div class="input-group">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="button" (click)="searchByLatLon()">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr style="border: solid 2px;">
+  <h3 style="font-weight: 700; font-size: 22px; margin-top: 20px; margin-bottom: 10px;" >Watch cache statistics!</h3>
+  <div class="row" >
+    <div class="col-md-12 col-lg-12">
+      <div class="input-group">
+        <button class="btn btn-secondary" type="button" (click)="searchStatistics()">
+          Statistics
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
