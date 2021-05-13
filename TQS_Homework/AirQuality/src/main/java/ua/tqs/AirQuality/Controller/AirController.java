@@ -14,8 +14,8 @@ import ua.tqs.AirQuality.Services.DataService;
 import ua.tqs.AirQuality.Model.AirData;
 import ua.tqs.AirQuality.Model.*;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -25,14 +25,14 @@ public class AirController {
     @Autowired
     private DataService airService;
 
-    private static final Logger logger = Logger.getLogger(AirController.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(AirController.class);
 
     @GetMapping("/air")
     public AirData getAirData(@RequestParam(value = "city", required = false) String city,
                               @RequestParam(value = "lat", required = false) Double lat,
                               @RequestParam(value = "lon", required = false) Double lon) {
         
-        logger.log(Level.INFO, "LOGGER: API AirData Request");
+        logger.info("LOGGER: API AirData Request");
 
         if (city != null) {
             return airService.getAirDataByCity(city);
@@ -47,7 +47,7 @@ public class AirController {
 
     @GetMapping("/statistics")
     public Cache getCacheStatistics() {
-        logger.log(Level.INFO, "LOGGER: API Statistics Request");
+        logger.info("LOGGER: API Statistics Request");
         return airService.getCache();
     }
 }

@@ -27,14 +27,14 @@ public class Cache {
         List<Object> item = new ArrayList<>();
         item.add(data);
         item.add(expireTime);
-        this.savedData.put(key, item);
+        this.savedData.put(key.toLowerCase(), item);
     }
 
     public AirData getData(String key) {
         this.numberOfRequests++;
         AirData data = null;
-
-        if (!checkKey(key)) {
+        key = key.toLowerCase();
+        if (!Boolean.TRUE.equals(checkKey(key))) {
             this.numberOfMisses++;
         } else {
             if (System.currentTimeMillis() > (Long) this.savedData.get(key).get(1) ) {

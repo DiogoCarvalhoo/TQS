@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.concurrent.TimeUnit;
 
 
-public class CacheTest {
+class CacheTest {
     private Cache cache;
     private AirData data;
     
@@ -33,7 +33,7 @@ public class CacheTest {
     }
 
     @Test
-    public void testInitialStatisticsValues() throws JsonMappingException, JsonProcessingException {
+    void testInitialStatisticsValues() throws JsonMappingException, JsonProcessingException {
         assertEquals(0, cache.getNumberOfRequests(), "Number of initial Request is not 0");
         assertEquals(0, cache.getNumberOfHits(),  "Number of initial Hits is not 0");
         assertEquals(0, cache.getNumberOfMisses(), "Number of initial Misses is not 0");
@@ -41,13 +41,13 @@ public class CacheTest {
 
 
     @Test
-    public void testgetDataMethod() throws JsonMappingException, JsonProcessingException {
+    void testgetDataMethod() throws JsonMappingException, JsonProcessingException {
         assertEquals("Entrecampos, Lisboa, Portugal", this.cache.getData("key").getData().getCity().getName(),"saveData: wrong data was returned!");
     }
 
 
     @Test
-    public void testSaveDataMethod() throws JsonMappingException, JsonProcessingException {
+    void testSaveDataMethod() throws JsonMappingException, JsonProcessingException {
         String json = "{\"data\":{\"city\":{\"name\":\"Sobreiras-Lordelo do Ouro, Porto, Portugal\",\"geo\":[41.1475,-8.6588888888889]},\"iaqi\":{\"dew\":null,\"h\":{\"v\":82.7},\"no2\":null,\"o3\":{\"v\":37.0},\"p\":{\"v\":1020.6},\"pm10\":null,\"pm25\":{\"v\":17.0},\"so2\":null,\"t\":{\"v\":14.4},\"w\":{\"v\":5.0},\"wg\":{\"v\":13.7}}}}";
         ObjectMapper mapper = new ObjectMapper();
         AirData newdata =  mapper.readValue(json, AirData.class);
@@ -57,13 +57,13 @@ public class CacheTest {
     }
 
     @Test
-    public void testCheckKeyMethod() {
+    void testCheckKeyMethod() {
         assertFalse(this.cache.checkKey("inexistent"), "CheckKey: Inexistent Key was found!");
         assertTrue(this.cache.checkKey("key"), "CheckKey: Existent Key was not found!");
     }
 
     @Test
-    public void testKeyDoNotExistRequest() {
+    void testKeyDoNotExistRequest() {
         int numberOfMisses = cache.getNumberOfMisses();
         int numberOfRequests = cache.getNumberOfRequests();
         this.cache.getData("inexistent");
@@ -72,7 +72,7 @@ public class CacheTest {
     }
 
     @Test
-    public void testKeyExistRequest() {
+    void testKeyExistRequest() {
         int numberOfHits = cache.getNumberOfHits();
         int numberOfRequests = cache.getNumberOfRequests();
         this.cache.getData("key");
@@ -81,7 +81,7 @@ public class CacheTest {
     }
 
     @Test
-    public void testKeyExpiredRequest() throws InterruptedException {
+    void testKeyExpiredRequest() throws InterruptedException {
         int numberOfMisses = cache.getNumberOfMisses();
         int numberOfRequests = cache.getNumberOfRequests();
         TimeUnit.SECONDS.sleep(6);

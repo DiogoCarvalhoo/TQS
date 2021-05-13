@@ -15,7 +15,7 @@ import ua.tqs.AirQuality.Repositories.AlternativeRepository;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(MockitoExtension.class)
-public class AirQualityAlternativeRepositoryTest {
+class AirQualityAlternativeRepositoryTest {
 
     @InjectMocks
     private AlternativeRepository repository;
@@ -26,7 +26,7 @@ public class AirQualityAlternativeRepositoryTest {
     }
 
     @Test
-    public void testGetDataByCityvRepositoryMethod() {
+    void testGetDataByCityvRepositoryMethod() {
         assertThat(repository.getDataByCity("lisbon")).isInstanceOf(AirData.class);
         assertEquals("Lisbon", repository.getDataByCity("lisbon").getData().getCity().getName());
 
@@ -34,12 +34,12 @@ public class AirQualityAlternativeRepositoryTest {
 
 
     @Test
-    public void testGetDataByCityvRepositoryMethodWithInvalidCity() {
+    void testGetDataByCityvRepositoryMethodWithInvalidCity() {
         assertEquals(null, repository.getDataByCity("inexistent city"), "Inexistent City Data Search do not return null" );
     }
 
     @Test
-    public void testGetDataByLatLonRepositoryMethod() {
+    void testGetDataByLatLonRepositoryMethod() {
         assertThat(repository.getDataByLatLon(11.0, 10.0)).isInstanceOf(AirData.class);
     }
 }

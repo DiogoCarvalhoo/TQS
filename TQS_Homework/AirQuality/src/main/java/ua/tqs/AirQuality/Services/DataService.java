@@ -10,8 +10,8 @@ import ua.tqs.AirQuality.Model.Cache  ;
 import ua.tqs.AirQuality.Repositories.AirQualityRepository;
 import ua.tqs.AirQuality.Repositories.AlternativeRepository;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 public class DataService {
@@ -23,23 +23,22 @@ public class DataService {
     private AlternativeRepository repositoryAlt;
 
     private final Cache cache = new Cache(600L);
-    private static final Logger logger = Logger.getLogger(DataService.class.getName());
-
+    private static final Logger logger = LoggerFactory.getLogger(DataService.class);
 
     public AirData getAirDataByCity(String city) {
         Boolean cacheAvailability = cache.checkKey(city);
-        logger.log(Level.INFO, "LOGGER: Checking if data is stored in cache! Result: " + cacheAvailability);
+        logger.info("LOGGER: Checking if data is stored in cache! Result: {}", cacheAvailability);
 
         AirData dados = null;
-        if (cacheAvailability) {
-            logger.log(Level.INFO, "LOGGER: Requesting data to cache!");
+        if (Boolean.TRUE.equals(cacheAvailability)) {
+            logger.info("LOGGER: Requesting data to cache!");
             dados = cache.getData(city);
             
-            logger.log(Level.INFO, "LOGGER: Asking statistics to cache!");
-            logger.log(Level.INFO,  cache.toString());
+            logger.info("LOGGER: Asking statistics to cache!");
+            logger.info("{}", cache);
 
             if (dados == null) {
-                logger.log(Level.INFO, "LOGGER: Cache data expired!");
+                logger.info("LOGGER: Cache data expired!");
                 dados = getDataFromApiByName(city);
             }
 
@@ -60,8 +59,7 @@ public class DataService {
 
     //Implementado com 2 apis externas que alteram caso a primeira nao esteja disponivel.
     public AirData getDataFromApiByName(String city) {
-        
-        logger.log(Level.INFO, "LOGGER: Requesting data to external API!");
+        logger.info("LOGGER: Requesting data to external API!");
         AirData dados = this.repository.getDataByCity(city);
         if (dados == null) { 
             //Requesting to alternative repository
@@ -72,7 +70,7 @@ public class DataService {
                     "Request not valid.  Please check api token and city name");
             }
         } else {
-            logger.log(Level.INFO, "LOGGER: Saving data into cache!");
+            logger.info("LOGGER: Saving data into cache!");
             saveDataInCache(city, dados);
         }
 
@@ -81,7 +79,7 @@ public class DataService {
 
     //Implementado com 2 apis externas que alteram caso a primeira nao esteja disponivel.
     public AirData getDataFromApiByLatLon(Double lat, Double lon) {
-        logger.log(Level.INFO, "LOGGER: Requesting data to external API!");
+        logger.info("LOGGER: Requesting data to external API!");
         AirData dados = this.repository.getDataByLatLon(lat, lon);
 
         if (dados == null) {

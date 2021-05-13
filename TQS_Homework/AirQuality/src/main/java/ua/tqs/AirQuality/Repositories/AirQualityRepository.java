@@ -6,13 +6,13 @@ import org.springframework.web.client.RestTemplate;
 
 import ua.tqs.AirQuality.Model.AirData;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 @Repository
 public class AirQualityRepository {
-    private static final Logger logger = Logger.getLogger(AirQualityRepository.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(AirQualityRepository.class);
 
     private static final String API_URL = "https://api.waqi.info/feed/";
 
@@ -22,17 +22,15 @@ public class AirQualityRepository {
 
     public AirData getDataByCity(String city) {
         AirData dados = null;
-        String loggerOutput;
 
         try {
             String url = API_URL + city + "/?token=" + TOKEN;
-            loggerOutput = "LOGGER: Sending request to url: " + url;
-            logger.log(Level.INFO, loggerOutput);
+            logger.info("LOGGER: Sending request to url: {}", url);
             dados = this.restTemplate.getForObject(url, AirData.class);
         }
         catch (Exception e) {
-            loggerOutput = "LOGGER:" + e.toString();
-            logger.log(Level.WARNING, loggerOutput);
+            logger.info("LOGGER: {}", e.toString());
+
         }
 
         return dados;
@@ -40,17 +38,14 @@ public class AirQualityRepository {
 
     public AirData getDataByLatLon(Double lat, Double lon) {
         AirData dados = null;
-        String loggerOutput;
 
         try {
             String url = API_URL + "geo:" + lat +";" + lon  + "/?token=" + TOKEN;
-            loggerOutput = "LOGGER: Sending request to url: " + url;
-            logger.log(Level.INFO, loggerOutput);
+            logger.info("LOGGER: Sending request to url: {}", url);
             dados = this.restTemplate.getForObject(url, AirData.class);
         }
         catch (Exception e) {
-            loggerOutput = "LOGGER:" + e.toString();
-            logger.log(Level.WARNING, loggerOutput);
+            logger.info("LOGGER: {}", e.toString());
         }
 
         return dados;

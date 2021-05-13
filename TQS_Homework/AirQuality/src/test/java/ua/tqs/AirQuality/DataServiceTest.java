@@ -26,7 +26,7 @@ import static org.mockito.Mockito.when;
 
 
 @ExtendWith(MockitoExtension.class)
-public class DataServiceTest {
+class DataServiceTest {
 
     private AirData dados1 = null;
     private AirData dados2 = null;
@@ -58,7 +58,7 @@ public class DataServiceTest {
     }
 
     @Test
-    public void testGetDataByValidCityService() {
+    void testGetDataByValidCityService() {
         when(repository.getDataByCity("lisbon")).thenReturn(this.dados1);
 
         assertThat(service.getAirDataByCity("lisbon")).isInstanceOf(AirData.class);
@@ -66,7 +66,7 @@ public class DataServiceTest {
     }
 
     @Test
-    public void testGetDataByValidCityServiceWithFirstAPIDown() {
+    void testGetDataByValidCityServiceWithFirstAPIDown() {
         when(repository.getDataByCity("lisbon")).thenReturn(null);
         when(repository2.getDataByCity("lisbon")).thenReturn(this.dados1);
 
@@ -76,7 +76,7 @@ public class DataServiceTest {
 
 
     @Test
-    public void testGetDataByInexistentCityService() {
+    void testGetDataByInexistentCityService() {
         when(repository.getDataByCity("inexistent city")).thenReturn(null);
         when(repository2.getDataByCity("inexistent city")).thenReturn(null);
 
@@ -85,7 +85,7 @@ public class DataServiceTest {
 
 
     @Test
-    public void testGetDataByLatLocService()  {
+    void testGetDataByLatLocService()  {
 
         when(repository.getDataByLatLon(11.0, 10.0)).thenReturn(this.dados2);
 
@@ -94,7 +94,7 @@ public class DataServiceTest {
     }
 
     @Test
-    public void testGetDataByLatLocServiceWithFirstAPIDown()  {
+    void testGetDataByLatLocServiceWithFirstAPIDown()  {
         when(repository.getDataByLatLon(11.0, 10.0)).thenReturn(null);
         when(repository2.getDataByLatLon(11.0, 10.0)).thenReturn(this.dados2);
 
