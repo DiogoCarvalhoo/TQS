@@ -27,24 +27,14 @@ public class Cache {
         List<Object> item = new ArrayList<>();
         item.add(data);
         item.add(expireTime);
-        this.savedData.put(key.toLowerCase(), item);
+        key = key.toLowerCase();
+        this.savedData.put(key, item);
     }
 
     public AirData getData(String key) {
-        this.numberOfRequests++;
         AirData data = null;
         key = key.toLowerCase();
-        if (!Boolean.TRUE.equals(checkKey(key))) {
-            this.numberOfMisses++;
-        } else {
-            if (System.currentTimeMillis() > (Long) this.savedData.get(key).get(1) ) {
-                this.savedData.remove(key);
-                this.numberOfMisses++;
-            } else {
-                this.numberOfHits++;
-                data = (AirData) this.savedData.get(key).get(0);
-            }
-        }
+        data = (AirData) this.savedData.get(key).get(0);
         return data;
     }
 
@@ -61,7 +51,20 @@ public class Cache {
     }
 
     public Boolean checkKey(String key) {
-        return this.savedData.containsKey(key);
+        this.numberOfRequests++;
+        if (this.savedData.containsKey(key)) {
+            if (System.currentTimeMillis() <= (Long) this.savedData.get(key).get(1)) {
+                this.numberOfHits++;
+                return true;
+            } else {
+                this.savedData.remove(key);
+                this.numberOfMisses++;
+                return false;
+            }
+        } else {
+            this.numberOfMisses++;
+            return false;
+        }
     }
 
     public String toString() {

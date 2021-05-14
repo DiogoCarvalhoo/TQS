@@ -52,7 +52,6 @@ class CacheTest {
         ObjectMapper mapper = new ObjectMapper();
         AirData newdata =  mapper.readValue(json, AirData.class);
         this.cache.saveData("additionalData", newdata);
-
         assertEquals("Sobreiras-Lordelo do Ouro, Porto, Portugal", this.cache.getData("additionalData").getData().getCity().getName(),"saveData: wrong data was returned!");
     }
 
@@ -66,7 +65,7 @@ class CacheTest {
     void testKeyDoNotExistRequest() {
         int numberOfMisses = cache.getNumberOfMisses();
         int numberOfRequests = cache.getNumberOfRequests();
-        this.cache.getData("inexistent");
+        this.cache.checkKey("inexistent");
         assertEquals(numberOfMisses+1, cache.getNumberOfMisses(), "Number of Misses do not increment on key do not exist request");
         assertEquals(numberOfRequests+1, cache.getNumberOfRequests(), "Number of Request do not increment on key do not exist request");
     }
@@ -75,7 +74,7 @@ class CacheTest {
     void testKeyExistRequest() {
         int numberOfHits = cache.getNumberOfHits();
         int numberOfRequests = cache.getNumberOfRequests();
-        this.cache.getData("key");
+        this.cache.checkKey("key");
         assertEquals(numberOfHits+1, cache.getNumberOfHits(), "Number of Hits do not increment on key exist request");
         assertEquals(numberOfRequests+1, cache.getNumberOfRequests(),  "Number of Request do not increment on key exist request");
     }
@@ -85,7 +84,7 @@ class CacheTest {
         int numberOfMisses = cache.getNumberOfMisses();
         int numberOfRequests = cache.getNumberOfRequests();
         TimeUnit.SECONDS.sleep(6);
-        this.cache.getData("key");
+        this.cache.checkKey("key");
         assertEquals(numberOfMisses+1, cache.getNumberOfMisses(), "Number of Misses do not increment on key expired request");
         assertEquals(numberOfRequests+1, cache.getNumberOfRequests(), "Number of Request do not increment on key expired request");
     }
