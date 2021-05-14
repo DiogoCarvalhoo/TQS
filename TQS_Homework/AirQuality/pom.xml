@@ -18,6 +18,9 @@
 		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 		<junit-jupiter.version>5.7.1</junit-jupiter.version>
 		<mockito-core.version>3.3.3</mockito-core.version>
+		<sonar.projectKey>DiogoCarvalhoo_TQS</sonar.projectKey>
+		<sonar.organization>diogocarvalhoo</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<dependencies>
 		<dependency>
